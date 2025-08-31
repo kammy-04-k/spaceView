@@ -1,0 +1,89 @@
+.param-card {
+  width: 200px;
+  height: 130px;
+  margin: 12px;
+  padding: 12px;
+  background: radial-gradient(circle at top left, #1a1a2e, #0f2027, #000000);
+  border-radius: 14px;
+  box-shadow: 0 0 18px rgba(102, 252, 241, 0.7), inset 0 0 25px rgba(102, 252, 241, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #cfd9df;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Twinkling stars background */
+.param-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.2;
+  animation: twinkle 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 50px); }
+}
+
+.param-card:hover {
+  transform: scale(1.07) rotate(1deg);
+  box-shadow: 0 0 30px #66fcf1, 0 0 60px rgba(102, 252, 241, 0.6);
+}
+
+
+.param-date-input {
+  margin-top: 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #45a29e;
+  background: rgba(255, 255, 255, 0.05);
+  color: #66fcf1;
+  font-size: 0.9rem;
+  z-index: 1;
+}
+
+.param-date-input:focus {
+  outline: none;
+  border-color: #66fcf1;
+  box-shadow: 0 0 8px #66fcf1;
+}
+.param-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #66fcf1; /* Neon aqua for consistency */
+  z-index: 1;
+}
+.param-card button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.param-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.param-card button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
